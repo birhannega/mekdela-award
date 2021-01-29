@@ -1,0 +1,22 @@
+<h1>Award Details</h1>
+<p>Winner; {{winner}}</p>
+<p>Winner; {{CurrentYear}}</p>
+
+<button mat-stroked-button color="primary"  (click)="CountClick()">click</button>
+
+<br>
+<br>
+<p>number of click: {{numberOfClick}}</p>
+
+
+<H2>List of users</H2>
+
+<mat-list>
+    <mat-list-item *ngFor="let user of userList; index as i">
+       
+         <!-- <p (click)='ShowCurrentUserDetail(user)' mat-stroked-button color="primary">  {{i+1}}- {{user.name}}--- {{user.address.city}}</p> -->
+         <a (click)='FetchUserDetail(user.id)' mat-stroked-button color="primary">  {{i+1}}- {{user.name}}--- {{user.address.city}}</a>
+
+        </mat-list-item>
+</mat-list>
+
